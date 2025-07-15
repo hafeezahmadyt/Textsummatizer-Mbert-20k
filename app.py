@@ -11,7 +11,8 @@ text_input = st.text_area("✍️ Paste Urdu text below:", height=300)
 
 # Load the model once
 if "model" not in st.session_state:
-    st.session_state.model = Summarizer("model/model.bin")
+    st.session_state.model = Summarizer("bert_extractive_classifier_day8.h5")
+
 
 if st.button("🔍 Generate Summary"):
     if text_input.strip() == "":
