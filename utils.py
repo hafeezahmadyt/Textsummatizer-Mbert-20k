@@ -8,7 +8,7 @@ class Summarizer:
     def __init__(self, classifier_model_path):
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')
         self.bert_model = TFBertModel.from_pretrained('bert-base-multilingual-cased')
-        self.classifier = tf.keras.models.load_model("bert_extractive_classifier_day8.h5")
+        self.classifier = tf.keras.models.load_model(classifier_model_path)
 
     def sentence_tokenizer(self, text):
         return [s.strip() for s in re.split(r'۔|\n|\.', text) if s.strip()]
